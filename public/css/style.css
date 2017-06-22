@@ -1,0 +1,58 @@
+.zero_margin
+{
+	margin: 0;
+}
+
+.jumbo
+{
+	background-image: url('../images/jumbo_image.jpg');
+	opacity: 1;
+	background-repeat:no-repeat;		/* Background image dont tile up*/
+	background-size: cover;				/*for image to be covered in mobile devices*/
+	background-attachment: fixed;		/* Background image is fixed in the viewport so that it doesn't move when 
+											the content's height is greater than the image's height */
+    background-color: #464646;			/* Set a background color that will be displayed
+    										while the background image is loading */ 
+    background-position: center center;	/*Background image is centered vertically and horizontally at all times */								
+    width: 100%;
+    height:100vh;
+}
+.jumbo h1{
+	color: #ffffff;
+	font-weight: bold;
+	font-family: "Algerian";
+	vertical-align: middle;
+	margin-top: 25%;
+	font-size: 80px
+}
+.top_bar
+{
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";       /* IE 8 */
+	filter: alpha(opacity=50);  /* IE 5-7 */
+	-moz-opacity: 0.5;          /* Netscape */
+	-khtml-opacity: 0.5;        /* Safari 1.x */
+	opacity: .8;               /* Good browsers */
+	border-radius: 0;
+	color: #000000
+}
+.affix {
+	top: 0;
+	width: 100%;
+}
+
+.affix + .container {
+	padding-top: 70px;
+}
+.footer{
+	background-color: #222;
+	color: #ffffff;
+}
+h1,h2,h3{
+	font-weight: bold;
+}
+.post{
+	margin-bottom: 5%
+}
+.btn-h1-spacing{
+	margin-top: 8px;
+}
