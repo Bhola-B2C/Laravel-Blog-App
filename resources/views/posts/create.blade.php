@@ -20,6 +20,10 @@
     				{{ Form::label('title','Title: ') }}
     				{{ Form::text('title', null, array('class' => 'form-control', 'required'=>'', 'maxlength'=>'255', 'placeholder'=>'Post Title')) }}
     			</div>
+    			<div class="form-group"> 
+    				{{ Form::label('slug','Url Slug: ') }}
+    				{{ Form::text('slug', null, array('class' => 'form-control', 'required'=>'', 'maxlength'=>'255', 'minlength' => '3', 'placeholder'=>'URL')) }}
+    			</div>
 				<div class="form-group">
 					{{ Form::label('body','Post Body: ') }}
     				{{ Form::textarea('body', null, array('class' => 'form-control', 'required'=>'', 'placeholder'=>'Post Body')) }}

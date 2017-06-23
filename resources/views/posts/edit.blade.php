@@ -20,9 +20,11 @@
 			<div class="form-group">
 				{{ Form::label('title', 'Title: ', ['class'=>'lead']) }}
 				<h1>{{ Form::text('title', null, ['class'=>'form-control input-lg', 'required'=>'', 'maxlength'=>'255']) }}</h1>
-				<hr>
 			</div>
-
+			<div class="form-group">
+				{{ Form::label('slug', 'Url Slug: ', ['class'=>'lead']) }}
+				<h1>{{ Form::text('slug', null, ['class'=>'form-control', 'required'=>'', 'minlength'=>'3', 'maxlength'=>'255']) }}</h1>
+			</div>
 			<div class="form-group">
 				{{ Form::label('body', 'Body: ', ['class'=>'lead']) }}
 				<p class="lead">{{ Form::textarea('body', null, ['class'=>'form-control', 'required'=>'']) }}</p>

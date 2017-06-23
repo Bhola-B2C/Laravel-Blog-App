@@ -23,9 +23,10 @@ Home
 	<div class="col-md-8">
 		@foreach ($posts as $post)
 			<div class="post">
-				<h3>{{ $post->title }}</h3>
+				<h3><b>{{ $post->title }}</b></h3>
 				<p>{{ substr($post->body,0,300) }}{{ strlen($post->body)>300 ? "..." : "" }}</p>
-				<a href="#" class="btn btn-primary">Read More</a>
+				<a href="{{ route('blog.single',$post->slug) }}" class="btn btn-primary">Read More</a>
+				<hr>
 			</div>
 		@endforeach
 	</div>
