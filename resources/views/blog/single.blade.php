@@ -1,6 +1,6 @@
 @extends('main')
 
-@section('title','$post->title')
+@section('title',$post->title)
 
 @section('jumbotron_writeup')
 	<h1 class="w3-animate-opacity h1">{{ $post->title}}</h1>
