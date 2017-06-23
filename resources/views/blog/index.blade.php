@@ -18,6 +18,9 @@
 				<hr>
 			</div>
 		@endforeach
+		<div class="col-md-8">
+			<div class="text-center">{!! $posts->links() !!}</div>
+		</div>
 	</div>
 
 @stop
