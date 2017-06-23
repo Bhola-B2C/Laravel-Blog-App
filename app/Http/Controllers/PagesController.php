@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Post;
+
 class PagesController extends Controller
 {
 	public function getHome()
 	{
-		return view('pages.home');
+		$posts=Post::orderBy('created_at','desc')->limit(4)->get();
+		return view('pages.home')->withPosts($posts);
 	}
 
 	public function getAbout()
