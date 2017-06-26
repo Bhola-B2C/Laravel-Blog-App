@@ -7,6 +7,36 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+## About the App
+
+This is a blog App made in Laravel. The Admin can create, view and edit the post. While user can view it and comment as well. In Admin Corner One can register it, for this one need admin pass code . If some one forgot its password , reset password feature is also included which is built in Laravel.
+
+## Dependencies and Installation
+
+After cloning the Project. Run "composer install" in your terminal(without qoutes). Be sure to change directory to Laravel-Blog-App.
+If .env file is not generated then create one and copy the content from .env.example and run "php artisan key:generate" (without qoutes).
+
+## Building and Running
+
+For database feature to take effect, you need to have database in your system(mysql, sqlite, etc.)
+For mysql enter following in env file
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=database_name
+DB_USERNAME=database_username
+DB_PASSWORD=database_password
+Then run "php artisan migrate" in your terminal.
+For Password reset feature and mail to take place enter following in .env file
+MAIL_DRIVER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=your_user_name(gmail)
+MAIL_PASSWORD=your_gmail_password
+MAIL_ENCRYPTION=tls
+
+Run "php artisan serve" in terminal
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
