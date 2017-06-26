@@ -13,29 +13,29 @@ This is a blog App made in Laravel. The Admin can create, view and edit the post
 
 ## Dependencies and Installation
 
-After cloning the Project. Run "composer install" in your terminal(without qoutes). Be sure to change directory to Laravel-Blog-App.
-If .env file is not generated then create one and copy the content from .env.example and run "php artisan key:generate" (without qoutes).
+After cloning the Project. Run "composer install" in your terminal(without qoutes). Be sure to change directory to Laravel-Blog-App. <br>
+If .env file is not generated then create one and copy the content from .env.example and run "php artisan key:generate" (without qoutes). <br>
 
 ## Building and Running
 
-For database feature to take effect, you need to have database in your system(mysql, sqlite, etc.)
-For mysql enter following in env file
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=database_name
-DB_USERNAME=database_username
-DB_PASSWORD=database_password
-Then run "php artisan migrate" in your terminal.
-For Password reset feature and mail to take place enter following in .env file
-MAIL_DRIVER=smtp
-MAIL_HOST=smtp.gmail.com
-MAIL_PORT=587
-MAIL_USERNAME=your_user_name(gmail)
-MAIL_PASSWORD=your_gmail_password
-MAIL_ENCRYPTION=tls
+For database feature to take effect, you need to have database in your system(mysql, sqlite, etc.) <br>
+For mysql enter following in env file <br>
+DB_CONNECTION=mysql <br>
+DB_HOST=127.0.0.1 <br>
+DB_PORT=3306 <br>
+DB_DATABASE=database_name <br>
+DB_USERNAME=database_username <br>
+DB_PASSWORD=database_password <br>
+Then run "php artisan migrate" in your terminal. <br>
+For Password reset feature and mail to take place enter following in .env file <br>
+MAIL_DRIVER=smtp <br>
+MAIL_HOST=smtp.gmail.com <br>
+MAIL_PORT=587 <br>
+MAIL_USERNAME=your_user_name(gmail) <br>
+MAIL_PASSWORD=your_gmail_password <br>
+MAIL_ENCRYPTION=tls <br>
 
-Run "php artisan serve" in terminal
+Run "php artisan serve" in terminal <br>
 
 ## About Laravel
 
