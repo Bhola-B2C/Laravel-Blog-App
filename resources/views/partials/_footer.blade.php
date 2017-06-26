@@ -1,4 +1,3 @@
-<hr>
 <div class="container-fluid footer text-center">
 	<br>
 	<p class="lead">Copyright Bhola - All Rights Reserved</p>

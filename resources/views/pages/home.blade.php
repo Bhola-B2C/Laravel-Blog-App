@@ -24,10 +24,10 @@ Home
 		@foreach ($posts as $post)
 			<div class="post">
 				<h2><b>{{ $post->title }}</b></h2>
-				<h6><i>Published At: {{ date('M j, Y', strtotime($post->created_at)) }}</i></h6>
+				<h6><i>Published By: Bhola | on: {{ date('M j, Y', strtotime($post->created_at)) }}</i></h6>
+				<hr>
 				<p>{{ substr($post->body,0,300) }}{{ strlen($post->body)>300 ? "..." : "" }}</p>
 				<a href="{{ route('blog.single',$post->slug) }}" class="btn btn-primary">Read More</a>
-				<hr>
 			</div>
 		@endforeach
 	</div>
