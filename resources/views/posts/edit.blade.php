@@ -26,6 +26,10 @@
 				<h1>{{ Form::text('slug', null, ['class'=>'form-control', 'required'=>'', 'minlength'=>'3', 'maxlength'=>'255']) }}</h1>
 			</div>
 			<div class="form-group">
+				{{ Form::label('category_id', 'Category: ', ['class'=>'lead']) }}
+				<h1>{{ Form::select('category_id',$categories,null,['class'=>'form-control']) }}</h1>
+			</div>
+			<div class="form-group">
 				{{ Form::label('body', 'Body: ', ['class'=>'lead']) }}
 				<p class="lead">{{ Form::textarea('body', null, ['class'=>'form-control', 'required'=>'']) }}</p>
 			</div>

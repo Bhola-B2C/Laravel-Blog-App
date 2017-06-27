@@ -14,6 +14,7 @@
           <ul class="dropdown-menu">
             <li><a href="{{ route('posts.create') }}">Create New Post</a></li>
             <li><a href="{{ route('posts.index') }}">View Posts</a></li>
+            <li><a href="{{ route('categories.index') }}">Categories</a></li>
             <li role="separator" class="divider"></li>
             <li>
             	<a href="{{ route('logout') }}"

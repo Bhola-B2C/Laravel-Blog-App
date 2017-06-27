@@ -24,6 +24,14 @@
     				{{ Form::label('slug','Url Slug: ') }}
     				{{ Form::text('slug', null, array('class' => 'form-control', 'required'=>'', 'maxlength'=>'255', 'minlength' => '3', 'placeholder'=>'URL')) }}
     			</div>
+    			<div class="form-group"> 
+    				{{ Form::label('category_id','Category: ') }}
+    				<select name="category_id" class="form-control">
+    					@foreach($categories as $category)
+    						<option value="{{ $category->id }}">{{ $category->name }}</option>
+    					@endforeach
+    				</select>
+    			</div>
 				<div class="form-group">
 					{{ Form::label('body','Post Body: ') }}
     				{{ Form::textarea('body', null, array('class' => 'form-control', 'required'=>'', 'placeholder'=>'Post Body')) }}

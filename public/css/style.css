@@ -56,3 +56,7 @@ h1,h2,h3{
 .btn-h1-spacing{
 	margin-top: 8px;
 }
+.hid
+{
+	visibility: hidden;
+}

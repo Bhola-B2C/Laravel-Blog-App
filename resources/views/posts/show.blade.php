@@ -22,6 +22,11 @@
 					<p><a href="{{ route('blog.single',$post->slug) }}">{{route('blog.single',$post->slug)}}</a></p><!-- definiton description (HTML5) 																		-->
 				</dl>
 				<dl class="dl-horizontal">	<!-- definition list (HTML5) -->
+					<label>Category: </label>	<!-- definition title (HTML5) -->
+					<!--Using php date function syntax: date('$format', timestamp) in database timestamp is stored in string format, so use strtotime-->
+					<p>{{ $post->category->name }}</p><!-- definiton description (HTML5) 																		-->
+				</dl>
+				<dl class="dl-horizontal">	<!-- definition list (HTML5) -->
 					<label>Created At:</label>	<!-- definition title (HTML5) -->
 					<!--Using php date function syntax: date('$format', timestamp) in database timestamp is stored in string format, so use strtotime-->
 					<p>{{ date('M j, Y h:ia',strtotime($post->created_at)) }}</p><!-- definiton description (HTML5) 																		-->
