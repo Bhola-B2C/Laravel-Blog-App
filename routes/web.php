@@ -15,7 +15,9 @@ Route::get('/', 'PagesController@getHome');
 Route::get('/about', 'PagesController@getAbout');
 Route::get('/contact', 'PagesController@getContact');
 
-Route::resource('posts','PostController');
+Route::resource('posts','PostController',['except'=>['store']]);
+Route::post('posts/{author}',['as'=>'posts.store', 'uses'=>'PostController@store']);
+//Route::post('posts/{author}',['as'=>'posts.index', 'uses'=>'PostController@index']);
 
 Route::get('blog/{slug}',['as'=>'blog.single', 'uses'=>'BlogController@getSingle'])->where('slug', '[\w\d\-\_]+');
 Route::get('blog', ['as' => 'blog.index', 'uses' => 'BlogController@getIndex']);

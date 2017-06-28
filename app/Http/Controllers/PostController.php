@@ -20,10 +20,10 @@ class PostController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index($author_id)
     {
         //variable to store all the blog post
-        $posts=Post::orderBy('id','desc')->paginate(10);
+        $posts=Post::where('user_id', '==', $author_id)->orderBy('id','desc')->paginate(10);
         //return to view with passing variable 
         return view('posts.index')->withPosts($posts);
     }
@@ -46,7 +46,7 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $author_id)
     {
         //validate the data
 
@@ -64,6 +64,7 @@ class PostController extends Controller
         $post->slug  = $request->slug;
         $post->category_id = $request->category_id;
         $post->body  = $request->body;
+        $post->user_id = $author_id; 
         $post->save();
 
         Session::flash('success','The blog post was successfully saved !');
@@ -95,8 +96,8 @@ class PostController extends Controller
     {
         //store the post obtained from db in a var
         $post=Post::find($id);
-        $categories=new Category;
-        $cats=[];
+        $categories=Category::all();
+        $cats=array() ;
         foreach ($categories as $category) {
             $cats[$category->id] = $category->name;
         }
@@ -116,6 +117,7 @@ class PostController extends Controller
     {
         // validate the data
         $post=Post::find($id);
+        $author_id=$post->user_id;
         if ($request->input('slug') == $post->slug) {
             $this->validate($request,array(
                 'title'=>'required|max:255',
@@ -137,6 +139,7 @@ class PostController extends Controller
         $post->slug  = $request->input('slug');
         $post->category_id=$request->input('category_id');
         $post->body  = $request->input('body');
+        $post->user_id = $author_id;
         $post->save();
 
         //store the message in flash

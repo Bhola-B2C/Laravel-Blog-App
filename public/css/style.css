@@ -60,3 +60,10 @@ h1,h2,h3{
 {
 	visibility: hidden;
 }
+.circle{
+	border-radius: 30px;
+	background: url(/images/go.png) 3px 5px no-repeat;;
+}
+.image-bottom-spacing{
+	margin-bottom: 4px;
+}

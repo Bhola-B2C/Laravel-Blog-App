@@ -23,10 +23,10 @@
 					@endforeach
 					<tr>
 						{!! Form::open(['route'=>'categories.store']) !!}
-						<td><img src="images/add.png" alt="add" height="20" onclick="change()" style="cursor: pointer;"></td>
+						<td><img src="images/add1600.png" alt="add" height="20" onclick="change()" style="cursor: pointer;"></td>
 						<td>{{  Form::text('name',null,['class'=>'form-control hid','required'=>'', 'maxlength'=>'255', 'placeholder'=>'Category'])}}</td>
+						<td>{{ Form::submit('>>',['class'=>'btn btn-success circle hid']) }}</td>
 						<td></td>
-						<td>{{ Form::submit('>>',['class'=>'btn btn-success btn-block hid']) }}</td>
 						{!! Form::close() !!}
 					</tr>
 				</tbody>
