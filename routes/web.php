@@ -17,6 +17,7 @@ Route::get('/contact', 'PagesController@getContact');
 
 Route::resource('posts','PostController',['except'=>['store']]);
 Route::post('posts/{author}',['as'=>'posts.store', 'uses'=>'PostController@store']);
+Route::put('posts/update_published/{published}', ['as'=>'posts.update_published', 'uses'=>'PostController@update_published']);
 //Route::post('posts/{author}',['as'=>'posts.index', 'uses'=>'PostController@index']);
 
 Route::get('blog/{slug}',['as'=>'blog.single', 'uses'=>'BlogController@getSingle'])->where('slug', '[\w\d\-\_]+');

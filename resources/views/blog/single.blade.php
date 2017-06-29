@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-
+@if($post->published==1)	
 	<div class="row">
 		<div class="col-md-8">
 			<h1>{{ $post->title }}</h1>
@@ -17,4 +17,9 @@
 		</div>
 	</div>
 
+@else
+	<h1>This post has not been published yet !!!</h1>
+	<hr>
+	<h2>Sorry for the incovenience</h2>
+@endif
 @stop

@@ -10,7 +10,7 @@ class BlogController extends Controller
 {
     //
 	public function getIndex(){
-		$posts=Post::orderBy('id','desc')->paginate(10);
+		$posts=Post::where('published','=',1)->orderBy('id','desc')->paginate(10);
 		return view('blog.index')->withPosts($posts);
 	}
 

@@ -23,6 +23,7 @@
 		<div class="col-md-12">
 			<table class="table">
 				<thead>
+					<th></th>
 					<th>#</th>
 					<th>Title</th>
 					<th>Body</th>
@@ -33,6 +34,13 @@
 					@foreach ($posts as $post)
 						@if ($post->user_id==Auth::user()->id)
 							<tr>
+								<th>
+									@if($post->published==1)
+										<img src="/images/check.png" alt="published" title="Published" height=20>
+									@else
+										<img src="/images/incomplete.svg" alt="not published" title="Not Published Yet" height=20>
+									@endif
+								</th>
 								<th>{{ $post->id }}</th>
 								<td>{{ $post->title }}</td>
 								<td>{{ substr($post->body,0,50) }}{{  strlen($post->body)>50 ? "..." : "" }}</td>

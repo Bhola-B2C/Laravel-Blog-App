@@ -12,6 +12,14 @@
 			<h1>{{ $post->title }}</h1>
 			<hr>
 			<p class="lead">{{ $post->body }}</p>
+			<hr>
+			{!! Form::open(['route'=>['posts.update_published',$post->id], 'method'=>'PUT']) !!}
+			@if ($post->published==0)
+				{{ Form::submit('Publish', ['class'=>'btn btn-success']) }}
+			@else
+				{{ Form::submit('UnPublish', ['class'=>'btn btn-danger']) }}
+			@endif
+			{!! Form::close() !!}
 		</div>
 
 		<div class="col-md-4">

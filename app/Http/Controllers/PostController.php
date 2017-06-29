@@ -20,10 +20,10 @@ class PostController extends Controller
         $this->middleware('auth');
     }
 
-    public function index($author_id)
+    public function index()
     {
         //variable to store all the blog post
-        $posts=Post::where('user_id', '==', $author_id)->orderBy('id','desc')->paginate(10);
+        $posts=Post::orderBy('id','desc')->paginate(10);
         //return to view with passing variable 
         return view('posts.index')->withPosts($posts);
     }
@@ -48,6 +48,10 @@ class PostController extends Controller
      */
     public function store(Request $request, $author_id)
     {
+        if ($request->input('published')!=1)
+        {
+            $request->published=0;    
+        }
         //validate the data
 
         $this->validate($request,array(
@@ -63,6 +67,7 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->slug  = $request->slug;
         $post->category_id = $request->category_id;
+        $post->published = $request->published;
         $post->body  = $request->body;
         $post->user_id = $author_id; 
         $post->save();
@@ -106,6 +111,24 @@ class PostController extends Controller
 
     }
 
+    /* Update through posts.show i.e. for changing the value of published */
+    public function update_published($id)
+    {
+        $post=Post::find($id);
+        if ($post->published==1)
+        {
+            $post->published=0;
+            $post->save();
+        }
+        else
+        {
+            $post->published=1;
+            $post->save();
+        }
+
+        return redirect()->route('posts.index');
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -134,13 +157,33 @@ class PostController extends Controller
             ));
         }
 
-        // save the data to db
-        $post->title = $request->input('title');
-        $post->slug  = $request->input('slug');
-        $post->category_id=$request->input('category_id');
-        $post->body  = $request->input('body');
-        $post->user_id = $author_id;
-        $post->save();
+        if($post->published==1)
+        {
+
+            // save the data to db
+            $post->title = $request->input('title');
+            $post->slug  = $request->input('slug');
+            $post->category_id=$request->input('category_id');
+            $post->body  = $request->input('body');
+            $post->user_id = $author_id;
+            $post->save();
+        }
+
+        else
+        {
+            if ($request->input('published')!=1)
+            {
+                $request->published=0;    
+            }
+            
+            $post->title = $request->input('title');
+            $post->slug  = $request->input('slug');
+            $post->category_id=$request->input('category_id');
+            $post->published = $request->published;
+            $post->body  = $request->input('body');
+            $post->user_id = $author_id;
+            $post->save();   
+        }
 
         //store the message in flash
         Session::flash('success','The post was successfully updated !');

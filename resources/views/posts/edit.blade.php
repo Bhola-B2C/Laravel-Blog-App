@@ -33,6 +33,14 @@
 				{{ Form::label('body', 'Body: ', ['class'=>'lead']) }}
 				<p class="lead">{{ Form::textarea('body', null, ['class'=>'form-control', 'required'=>'']) }}</p>
 			</div>
+			<div class="form-group">
+				@if($post->published==0)
+    				{{ Form::checkbox('published',1, null, array('class' => 'w3-check')) }}
+    				{{ Form::label('published','Save Changes as well as Publish') }}
+    			@else
+    				<p><strong><li>Post is already published !!</li></strong></p>
+    			@endif
+			</div>
 		</div>
 
 		<div class="col-md-4">
