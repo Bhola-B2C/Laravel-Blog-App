@@ -32,6 +32,9 @@
     					@endforeach
     				</select>
     			</div>
+    			<div class="form-group">
+    				Your Category is not listed ? <a href="{{route('categories.index')}}" class="btn-link">Want to create Category ?</a>
+    			</div>
 				<div class="form-group">
 					{{ Form::label('body','Post Body: ') }}
     				{{ Form::textarea('body', null, array('class' => 'form-control', 'required'=>'', 'placeholder'=>'Post Body')) }}

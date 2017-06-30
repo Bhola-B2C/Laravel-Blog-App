@@ -1,6 +1,12 @@
 @if (Session::has('success'))
-	<div class="alert alert-success" role="alert">
+	<div class="alert alert-success btn-h1-spacing" role="alert">
 		<strong>Success:</strong> {{ Session::get('success') }}
+	</div>
+@endif
+
+@if (Session::has('danger'))
+	<div class="alert alert-danger btn-h1-spacing " role="alert">
+		<strong>Danger:</strong> {{ Session::get('danger') }}
 	</div>
 @endif
 

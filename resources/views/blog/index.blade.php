@@ -24,6 +24,7 @@
 				@endif		
 			@endforeach
 		 </div>
+		 @include('partials._sidebar')
 		<div class="col-md-8">
 			<div class="text-center">{!! $posts->links() !!}</div>
 		</div>

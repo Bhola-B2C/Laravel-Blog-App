@@ -9,21 +9,21 @@ use Session;
 
 class PostController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
 
     public function __construct()
     {
         $this->middleware('auth');
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         //variable to store all the blog post
-        $posts=Post::orderBy('id','desc')->paginate(10);
+        $posts=Post::where('user_id',\Auth::user()->id)->orderBy('id','desc')->paginate(10);
         //return to view with passing variable 
         return view('posts.index')->withPosts($posts);
     }

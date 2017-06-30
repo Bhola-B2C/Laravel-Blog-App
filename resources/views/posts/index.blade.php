@@ -32,7 +32,6 @@
 				</thead>
 				<tbody>
 					@foreach ($posts as $post)
-						@if ($post->user_id==Auth::user()->id)
 							<tr>
 								<th>
 									@if($post->published==1)
@@ -50,7 +49,6 @@
 									<a href="{{ route('posts.edit', $post->id) }}" class="btn btn-default btn-sm">Edit</a>
 								</td>
 							</tr>
-						@endif
 					@endforeach
 				</tbody>
 			</table>

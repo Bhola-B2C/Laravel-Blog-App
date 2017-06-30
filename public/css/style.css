@@ -67,3 +67,6 @@ h1,h2,h3{
 .image-bottom-spacing{
 	margin-bottom: 4px;
 }
+body{
+	background-color: #ffffff;
+}

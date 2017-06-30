@@ -9,5 +9,8 @@
 @endsection
 
 @section('content')
-	Contact Page
+	<div class="row">
+		<div class="col-md-8">Contact Page</div>
+		@include('partials._sidebar')
+	</div>
 @endsection

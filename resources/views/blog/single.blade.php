@@ -15,6 +15,7 @@
 			<hr>
 			<p>{{ $post->body }}</p>
 		</div>
+		@include('partials._sidebar')
 	</div>
 
 @else
