@@ -11,8 +11,8 @@ class Post extends Model
     	return $this->belongsTo('App\Category');
     }
 
-    public function User()
+    public function Admin()
     {
-    	return $this->belongsTo('App\User');	
+    	return $this->belongsTo('App\Admin');	
     }
 }

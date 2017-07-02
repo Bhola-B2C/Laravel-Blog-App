@@ -23,7 +23,7 @@ class PostController extends Controller
     public function index()
     {
         //variable to store all the blog post
-        $posts=Post::where('user_id',\Auth::user()->id)->orderBy('id','desc')->paginate(10);
+        $posts=Post::where('admin_id',\Auth::user()->id)->orderBy('id','desc')->paginate(10);
         //return to view with passing variable 
         return view('posts.index')->withPosts($posts);
     }
@@ -69,7 +69,7 @@ class PostController extends Controller
         $post->category_id = $request->category_id;
         $post->published = $request->published;
         $post->body  = $request->body;
-        $post->user_id = $author_id; 
+        $post->admin_id = $author_id; 
         $post->save();
 
         Session::flash('success','The blog post was successfully saved !');
@@ -165,7 +165,7 @@ class PostController extends Controller
             $post->slug  = $request->input('slug');
             $post->category_id=$request->input('category_id');
             $post->body  = $request->input('body');
-            $post->user_id = $author_id;
+            $post->admin_id = $author_id;
             $post->save();
         }
 
@@ -181,7 +181,7 @@ class PostController extends Controller
             $post->category_id=$request->input('category_id');
             $post->published = $request->published;
             $post->body  = $request->input('body');
-            $post->user_id = $author_id;
+            $post->admin_id = $author_id;
             $post->save();   
         }
 

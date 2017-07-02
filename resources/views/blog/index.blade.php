@@ -15,7 +15,7 @@
 
 					<div class="post">
 						<h2><b>{{ $post->title }}</b></h2>
-						<h7><i><img src="images/posted.png" height="16" class="image-bottom-spacing"> Posted By <strong>{{ $post->user->name }}</strong> on {{ date('M j, Y', strtotime($post->created_at)) }} <img src="images/category.png" height="16" class="image-bottom-spacing"> Filed in <a href="" class="btn-link">{{$post->category->name}}</a></i></h7>
+						<h7><i><img src="images/posted.png" height="16" class="image-bottom-spacing"> Posted By <strong>{{ $post->admin->name }}</strong> on {{ date('M j, Y', strtotime($post->created_at)) }} <img src="images/category.png" height="16" class="image-bottom-spacing"> Filed in <a href="" class="btn-link">{{$post->category->name}}</a></i></h7>
 						<hr>
 						<p>{{ substr($post->body,0,300) }}{{ strlen($post->body)>300 ? "..." : "" }}</p>
 						<a href="{{ route('blog.single',$post->slug) }}" class="btn btn-primary">Read More</a>

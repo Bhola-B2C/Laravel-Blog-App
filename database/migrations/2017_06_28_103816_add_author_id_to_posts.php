@@ -14,7 +14,7 @@ class AddAuthorIdToPosts extends Migration
     public function up()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->integer('user_id')->after('body')->unsigned();
+            $table->integer('admin_id')->after('body')->unsigned();
         });
     }
 
@@ -26,7 +26,7 @@ class AddAuthorIdToPosts extends Migration
     public function down()
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->dropColumn('author_id');
+            $table->dropColumn('admin_id');
         });
     }
 }
