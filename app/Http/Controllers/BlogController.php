@@ -33,9 +33,9 @@ class BlogController extends Controller
 
 		$catcnt=[];
 		$posts_to_cnt=Post::where('published',1)->get();
-		foreach ($posts_to_cnt as $post) 
+		foreach ($posts_to_cnt as $post1) 
 		{
-			$catcnt[$post->category_id]=Post::where('category_id',$post->category_id)->count();	
+			$catcnt[$post1->category_id]=Post::where('category_id',$post1->category_id)->count();	
 		}
 		$categories=Category::all();
 
