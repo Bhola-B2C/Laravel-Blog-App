@@ -10,7 +10,7 @@
 		<img src="/images/down_arrow.png" class="" height="20%" id="down">
 		</div>
 		@include('partials._navbar')
-		<div class="container">
+		<div class="container" style="background-color: #fff">
 			@include('partials._messages')
 			@yield('content')
 		</div>

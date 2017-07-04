@@ -70,3 +70,10 @@ h1,h2,h3{
 body{
 	background-color: #ffffff;
 }
+.sub-title-group{
+	margin-right: 15px;
+}
+
+.font-light-weight{
+	font-weight: normal;
+}

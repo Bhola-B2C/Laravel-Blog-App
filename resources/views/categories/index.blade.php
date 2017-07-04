@@ -32,7 +32,7 @@
 						@endforeach
 						<tr>
 							{!! Form::open(['route'=>'categories.store']) !!}
-							<td><img src="images/add1600.png" alt="add" height="20" onclick="change()" style="cursor: pointer;" title="Add New Category"></td>
+							<td><span class="glyphicon glyphicon-plus-sign" onclick="change()" title="Add New Category" style="cursor: pointer;"></span></td>
 							<td>{{  Form::text('name',null,['class'=>'form-control hid','required'=>'', 'maxlength'=>'255', 'placeholder'=>'Category'])}}</td>
 							<td><input type="image" src="/images/go.png" alt="Create" height="35" title="Create" class="hid"></td>
 							<td></td>
