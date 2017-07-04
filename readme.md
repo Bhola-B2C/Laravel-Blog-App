@@ -1,4 +1,4 @@
-<p align="center"><img src="images/b2c.jpg"></p>
+<p align="center"><img src="public/images/b2c.jpg"></p>
 
 
 ## About the App
