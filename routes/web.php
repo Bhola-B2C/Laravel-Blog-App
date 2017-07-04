@@ -41,3 +41,7 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 //For Categories
 Route::resource('categories','CategoryController',['except'=>['create']]);
 
+//For Social Login
+
+Route::get('/auth/{id}','SocialAuthController@socialredirect')->name('social.redirect');
+Route::get('/auth/{id}/callback','SocialAuthController@socialcallback')->name('social.callback');
