@@ -140,7 +140,7 @@ class PostController extends Controller
     {
         // validate the data
         $post=Post::find($id);
-        $author_id=$post->user_id;
+        $author_id=$post->admin_id;
         if ($request->input('slug') == $post->slug) {
             $this->validate($request,array(
                 'title'=>'required|max:255',

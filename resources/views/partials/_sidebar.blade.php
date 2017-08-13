@@ -1,5 +1,5 @@
 	<div class="col-md-4">
-		<div class="well">
+		<div class="well sidebar">
 			<input type="text" class="form-control" placeholder="Search">
 			<hr>
 			<h5><strong>Recent Posts</strong></h5>
@@ -25,6 +25,6 @@
 			<h5><strong>Archives</strong></h5>
 			<hr>
 			<h5><strong>Find me in: </strong></h5>
-			<img src="/images/gplus.jpg" height="50" style="margin-left: 20px"><img src="/images/fb.png" height="50" style="margin-left: 20px"><img src="/images/github.png" height="50" style="margin-left: 20px">
+			<img src="/images/gplus.png" height="50" style="margin-left: 20px"><img src="/images/fb.png" height="50" style="margin-left: 20px"><img src="/images/github.png" height="50" style="margin-left: 20px">
 		</div>
 	</div>

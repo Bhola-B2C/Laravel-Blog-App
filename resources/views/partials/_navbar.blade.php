@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed" style="border-radius: 0;z-index: 1" data-spy="affix" id="nav">
+<nav class="navbar navbar-inverse navbar-fixed edit-nav" id="nav">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -28,19 +28,19 @@
       @if(1==2)
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi {{ $user->getName() }}<span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
               <li role="separator" class="divider"></li>
               <li><a href="#">Logout</a></li>
             </ul>
           </li>
         </ul>
       @else
-        <a href="{{route('social.redirect','facebook')}}" class="btn-link">FB Login</a>
-        <a href="{{route('social.redirect','google')}}" class="btn-link">Google Login</a>
+        <div class="navbar-right">
+          <a href="{{route('social.redirect','facebook')}}" class="btn-link"><img src="/images/fb.png" alt="" height="35" style="margin-bottom: 5px; margin-top: 5px; margin-left: 10px"></a>
+          <a href="{{route('social.redirect','google')}}" class="btn-link"><img src="/images/gplus.png" alt="" height="37" style="margin-bottom: 5px; margin-top: 5px; margin-left: 10px"></a>
+
+        </div>
       @endif()
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

@@ -4,20 +4,11 @@
 Home
 @endsection
 
-@section('jumbotron_writeup')
-<h1 class="w3-animate-opacity h1">Welcome to My Blog!!!</h1>
-
+@section('jumbo')
+	@include('partials._jumbo')
 @endsection
 
 @section('content')
-<div class="row">
-	<div class="jumbotron">
-		<h1 class="h1">Welcome to My Blog!!!</h1>
-		<p class="lead">Thank you so much for visiting my blog. Please read my popular post.</p>
-		<p><a class="btn-primary btn-lg" role="button" href="#">Popular Post</a></p>
-	</div>
-</div>
-
 <div class="row">
 
 	<div class="col-md-8">
@@ -25,7 +16,7 @@ Home
 		@foreach ($posts as $post)
 
 				<div class="post">
-					<h2><b>{{ $post->title }}</b></h2>
+					<h1><b>{{ $post->title }}</b></h1>
 					<h7>
 						<i>
 								<span class="glyphicon glyphicon-user"></span> Posted By <strong class="sub-title-group">{{ $post->admin->name }}</strong>

@@ -1,29 +1,54 @@
+.edit-nav
+{
+	border-radius: 0;
+	z-index: 1;
+	margin-bottom: 0px;
+	opacity: 1;
+	/*position: fixed;
+	/*height: 60px; */
+}
 .zero_margin
 {
 	margin: 0;
 }
-
+.main{
+	margin-top: 0px;
+	background-color: #ffffff;
+}
 .jumbo
 {
-	background-image: url('../images/jumbo_image.jpg');
-	opacity: 1;
+	background-image: url('../images/header1.jpg');
+	opacity: .9;
 	background-repeat:no-repeat;		/* Background image dont tile up*/
 	background-size: cover;				/*for image to be covered in mobile devices*/
-	background-attachment: fixed;		/* Background image is fixed in the viewport so that it doesn't move when 
+	/*background-attachment: fixed;		/* Background image is fixed in the viewport so that it doesn't move when 
 											the content's height is greater than the image's height */
     background-color: #464646;			/* Set a background color that will be displayed
     										while the background image is loading */ 
     background-position: center center;	/*Background image is centered vertically and horizontally at all times */								
     width: 100%;
-    height:100vh;
+    height:40vh;
 }
-.jumbo h1{
-	color: #ffffff;
-	font-weight: bold;
-	font-family: "Algerian";
+.header{
 	vertical-align: middle;
-	margin-top: 25%;
-	font-size: 80px
+}
+.header-h1{
+	font-weight: bold;
+	font-size: 400%;
+}
+.jumbo>.header>h1{
+	color: #000;
+	font-weight: bold;
+	font-family: cursive;
+	margin: 0px;
+	margin-left: 20%;
+}
+.jumbo>.header>h2{
+	color: #ffffff;
+	font-family: "Algerian";
+	margin: 0px;
+	margin-left: 20%;
+	color: #000;
 }
 .top_bar
 {
@@ -35,23 +60,35 @@
 	border-radius: 0;
 	color: #000000
 }
-.affix {
+/*.affix {
 	top: 0;
 	width: 100%;
 }
 
 .affix + .container {
 	padding-top: 70px;
-}
+}*/
 .footer{
-	background-color: #222;
+	background-color: #1f1e20;
 	color: #ffffff;
+}
+.sub-footer{
+	background-color: rgba(31,30,32,0.8);
+	color:#ffffff;
+}
+.footer-image{
+	float: left;
+	padding: 0 20px 20px 0;
+}
+.content-footer{
+	margin-top: 20px;
 }
 h1,h2,h3{
 	font-weight: bold;
 }
 .post{
 	margin-bottom: 5%;
+	margin-top: 5%;
 }
 .btn-h1-spacing{
 	margin-top: 8px;
@@ -76,4 +113,47 @@ body{
 
 .font-light-weight{
 	font-weight: normal;
+}
+.comment{
+	margin-bottom: 45px;
+}
+.author-image{
+	width: 50px;
+	height: 50px;
+	border-radius: 0%;
+	float: left;
+}
+.author-name{
+	float: left;
+	margin-left: 15px;
+}
+.author-name>h4{
+	margin: 5px 0px;
+}
+.author-time{
+	font-size: 11px;
+	font-style: italic;
+	color: #aaa;
+}
+.comment-content{
+	clear: both;
+	margin-left: 65px;
+	font-size: 16px;
+	line-height: 1.3em;
+}
+.comment{
+	margin-top:20px;
+}
+.comment-heading{
+	float: left;
+	margin-left:12px;
+	font-size: 30px;
+	margin-top:-5px;
+}
+.gly-comment{
+	float: left;
+}
+.sidebar{
+	border-radius: 0px;
+	margin-top: 5%;
 }

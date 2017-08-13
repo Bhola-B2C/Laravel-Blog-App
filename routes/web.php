@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'PagesController@getHome');
+Route::get('/', 'PagesController@getHome')->name('pages.home');
 Route::get('/about', 'PagesController@getAbout');
 Route::get('/contact', 'PagesController@getContact');
 
@@ -43,5 +43,8 @@ Route::resource('categories','CategoryController',['except'=>['create']]);
 
 //For Social Login
 
-Route::get('/auth/{id}','SocialAuthController@socialredirect')->name('social.redirect');
-Route::get('/auth/{id}/callback','SocialAuthController@socialcallback')->name('social.callback');
+Route::get('/auth/{provider}','SocialAuthController@socialredirect')->name('social.redirect');
+Route::get('/auth/{provider}/callback','SocialAuthController@socialcallback')->name('social.callback');
+
+//For Comments
+Route::post('comments/{post_id}','CommentsController@store')->name('comments.store');
