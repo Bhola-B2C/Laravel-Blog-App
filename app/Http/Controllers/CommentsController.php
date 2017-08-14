@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Comment;
 use App\Post;
 use Session;
+use Purifier;
 
 class CommentsController extends Controller
 {
@@ -53,7 +54,7 @@ class CommentsController extends Controller
         $comment=new Comment();
         $comment->name=$request->name;
         $comment->email=$request->email;
-        $comment->comment=$request->comment;
+        $comment->comment=Purifier::clean($request->comment);
         $comment->approved=true;
         $comment->post()->associate($post);
         $comment->save();

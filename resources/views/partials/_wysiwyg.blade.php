@@ -3,7 +3,7 @@
     <script>
         tinymce.init({
             selector: 'textarea',
-            plugins: 'code link spellchecker',
-            browser_spellcheck: true
+            plugins: 'code link spellchecker emoticons',
+            browser_spellcheck: true,
         });
     </script>

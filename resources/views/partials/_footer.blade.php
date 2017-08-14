@@ -27,7 +27,7 @@
 					<p>Copyright © 2017. Created by Bhola(GNU Linux User Group, NIT DGP)</p>
 				</div>
 				<div class="col-md-6">
-					<div class="navbar-header navbar-right" style="margin-top: -10px">
+					<div class="navbar-header navbar-right" style="margin-top: -5px">
 						@if (Auth::guest())
 							<a href="{{ route('login') }}" class="">Admin Login</a>
 						@else

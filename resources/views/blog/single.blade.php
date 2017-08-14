@@ -2,6 +2,20 @@
 
 @section('title',$post->title)
 
+@section('stylesheets')
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=ujazcyafsl353q9uxgushagtlusq5pprmyvg79pwf0y3ysg8"></script>
+
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'code link spellchecker emoticons',
+            browser_spellcheck: true,
+            toolbar: 'emoticons',
+            menubar:false
+        });
+    </script>
+@endsection
+
 @section('jumbotron_writeup')
 	<h1 class="w3-animate-opacity h1">{{ $post->title}}</h1>
 @stop
@@ -43,7 +57,7 @@
 									</div>
 								</div>
 								<div class="comment-content">
-									{{$comment->comment}}
+									{!! $comment->comment !!}
 								</div>
 								<hr>
 							</div>
@@ -61,7 +75,7 @@
 					</div>
 					<div class="row">
 						<div class="col-md-10 col-md-offset-0">
-						{{ Form::textarea('comment', null, array('class' => 'form-control', 'required'=>'', 'placeholder'=>'Comment')) }}
+						{{ Form::textarea('comment', null, array('class' => 'form-control', 'placeholder'=>'Comment')) }}
 						</div>
 					</div>
 					<div class="row">
