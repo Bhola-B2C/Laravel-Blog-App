@@ -22,7 +22,7 @@
 						</i>
 					</h7>
 				<hr>
-				<p>{{ $post->body }}</p>
+				<p>{!! $post->body !!}</p>
 				<hr>
 			</div>
 			<div class="panel">

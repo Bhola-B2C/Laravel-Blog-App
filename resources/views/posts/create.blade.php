@@ -4,6 +4,7 @@
 
 @section('stylesheets')
 	{!! Html::style('css/parsley.css') !!}
+    @include('partials._wysiwyg')
 @endsection
 
 @section('jumbotron_writeup')
@@ -37,7 +38,7 @@
     			</div>
 				<div class="form-group">
 					{{ Form::label('body','Post Body: ') }}
-    				{{ Form::textarea('body', null, array('class' => 'form-control', 'required'=>'', 'placeholder'=>'Post Body')) }}
+    				{{ Form::textarea('body', null, array('class' => 'form-control', 'placeholder'=>'Post Body')) }}
 				</div>
 				<div class="form-group">
     				{{ Form::checkbox('published',1, null, array('class' => 'w3-check')) }}

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed edit-nav" id="nav">
+<nav class="navbar navbar-inverse edit-nav" id="nav">
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -20,10 +20,14 @@
         <li class="{{ Request::is('contact') ? "active" : "" }}"><a href="/contact">Contact</a></li>
       </ul>
       <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+        <div class="input-group">
+          <input type="text" class="form-control" name="q" placeholder="Search"> 
+            <span class="input-group-btn">
+              <button type="submit" class="btn btn-default">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+            </span>
         </div>
-        <button type="submit" class="btn btn-default">Search</button>
       </form>
       @if(1==2)
         <ul class="nav navbar-nav navbar-right">

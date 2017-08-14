@@ -8,9 +8,10 @@
 
 @stop
 
-<!--@section('stylesheets')
+@section('stylesheets')
 	{!! Html::style('css/parsley.css') !!}
-@endsection-->
+    @include('partials._wysiwyg')
+@endsection
 
 @section('content')
 	<div class="row">

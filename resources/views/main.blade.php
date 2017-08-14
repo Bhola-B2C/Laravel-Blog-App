@@ -7,6 +7,7 @@
 		{{--@include('partials._topbar')--}}
 		@include('partials._navbar')
 		@yield('jumbo')
+		<div class="blank"></div>
 		<div class="container main">
 			@include('partials._messages')
 			@yield('content')

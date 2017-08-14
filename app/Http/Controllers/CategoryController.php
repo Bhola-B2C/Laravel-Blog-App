@@ -59,7 +59,17 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $cat=Category::find($id);
+        $posts=Post::where('published',1)->orderBy('created_at','desc')->limit(5)->get();
+        $catcnt=[];
+        $posts_to_cnt=Post::where('published',1)->get();
+        foreach ($posts_to_cnt as $post) 
+        {
+            $catcnt[$post->category_id]=Post::where('category_id',$post->category_id)->count(); 
+        }
+        $categories=Category::all();
+        $posts2=Post::where('category_id',$id)->orderBy('id','desc')->paginate(10);
+        return view('categories.show')->withPosts($posts)->withCategories($categories)->withCatcnt($catcnt)->withPosts2($posts2)->withCategoryname($cat);
     }
 
     /**

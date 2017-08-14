@@ -11,7 +11,7 @@
 		<div class="col-md-8">
 			<h1>{{ $post->title }}</h1>
 			<hr>
-			<p class="lead">{{ $post->body }}</p>
+			<p class="lead">{!! $post->body !!}</p>
 			<hr>
 			{!! Form::open(['route'=>['posts.update_published',$post->id], 'method'=>'PUT']) !!}
 			@if ($post->published==0)
@@ -20,6 +20,32 @@
 				{{ Form::submit('UnPublish', ['class'=>'btn btn-danger']) }}
 			@endif
 			{!! Form::close() !!}
+			<div class="comment author-comment">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Comment</th>
+							<th>Delete</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach($post->comments as $comment)
+						<tr>
+							<td>{{ $comment->name }}</td>
+							<td>{{ $comment->email }}</td>
+							<td>{{ $comment->comment }}</td>
+							<td>
+								{!! Form::open(['route' => ['comment.destroy', $comment->id], 'method' => 'delete', 'onsubmit'=>"return confirm('Do you really want to delete the Post ?')"]) !!}
+								<input type="image" src="/images/DeleteRed.png" alt="Delete" height="15" title="Delete">
+								{!! Form::close() !!}
+							</td>
+						</tr>
+						@endforeach
+					</tbody>
+				</table>
+			</div>
 		</div>
 
 		<div class="col-md-4">

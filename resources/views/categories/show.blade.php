@@ -1,19 +1,17 @@
 @extends('main')
 
 @section('title')
-Home
-@endsection
-
-@section('jumbo')
-	@include('partials._jumbo')
+Category
 @endsection
 
 @section('content')
 <div class="row">
 
 	<div class="col-md-8">
+	<h1>Category- <strong>{{$categoryname->name}}</strong></h1>
+	<hr>
 	<div class="">
-		@foreach ($posts as $post)
+		@foreach ($posts2 as $post)
 
 				<div class="post">
 					<h1><b>{{ $post->title }}</b></h1>

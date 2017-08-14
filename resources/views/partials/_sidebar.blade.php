@@ -1,15 +1,23 @@
 	<div class="col-md-4">
 		<div class="well sidebar">
-			<input type="text" class="form-control" placeholder="Search">
+			<div class="input-group">
+				<input type="text" class="form-control" name="q"
+				placeholder="Search posts"> 
+				<span class="input-group-btn">
+					<button type="submit" class="btn btn-default">
+						<span class="glyphicon glyphicon-search"></span>
+					</button>
+				</span>
+    		</div>
 			<hr>
-			<h5><strong>Recent Posts</strong></h5>
+			<div class="sidebar-heading"><h5><strong>Recent Posts</strong></h5></div>
 			@foreach ($posts as $post)
-			<li><a href="{{ route('blog.single',$post->slug) }}" class="btn-link">{{ $post->title }}</a></li>
+			<li><a href="{{ route('blog.single',$post->slug) }}" class="btn-link">{{ substr($post->title,0,40) }}{{ strlen($post->title)>40 ? "..." : "" }}</a></li>
 			@endforeach
 			<hr>
 			<h5><strong>Categories</strong></h5>
 			@foreach ($categories as $category)
-			<li><a href="" class="btn-link">{{ $category->name }}</a> (
+			<li><a href="{{route('categories.show',$category->id)}}" class="btn-link">{{ $category->name }}</a> (
 				@if(isset($catcnt[$category->id]))
 					{{$catcnt[$category->id]}}
 				@else

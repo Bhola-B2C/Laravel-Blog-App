@@ -48,3 +48,4 @@ Route::get('/auth/{provider}/callback','SocialAuthController@socialcallback')->n
 
 //For Comments
 Route::post('comments/{post_id}','CommentsController@store')->name('comments.store');
+Route::delete('comments/{comment_id}','CommentsController@destroy')->name('comment.destroy');

@@ -27,20 +27,22 @@
 					<p>Copyright © 2017. Created by Bhola(GNU Linux User Group, NIT DGP)</p>
 				</div>
 				<div class="col-md-6">
-					<a href="">Home</a> | <a href="">Home</a> | <a href="">Home</a>
-					@if (Auth::guest())
-						<a href="{{ route('login') }}">Admin Login</a>
-					@else
-						<ul class="nav navbar-nav navbar-right">
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi {{ Auth::user()->name }} <span class="caret"></span></a>
+					<div class="navbar-header navbar-right" style="margin-top: -10px">
+						@if (Auth::guest())
+							<a href="{{ route('login') }}" class="">Admin Login</a>
+						@else
+							<ul class="nav navbar-nav navbar-right">
+								<li class="dropup">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi {{ Auth::user()->name }} <span class="caret"></span></a>
 									<ul class="dropdown-menu">
 										<li><a href="{{ route('posts.create') }}">Create New Post</a></li>
 										<li><a href="{{ route('posts.index') }}">View Posts</a></li>
 										<li><a href="{{ route('categories.index') }}">Categories</a></li>
 										<li role="separator" class="divider"></li>
 										<li>
-											<a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+											<a href="{{ route('logout') }}"
+											onclick="event.preventDefault();
+											document.getElementById('logout-form').submit();">
 											Logout
 											</a>
 
@@ -49,9 +51,10 @@
 											</form>
 										</li>
 									</ul>
-							</li>
-						</ul>
-					@endif
+								</li>
+							</ul>
+						@endif
+					</div>
 				</div>
 			</div>
 		</div>
