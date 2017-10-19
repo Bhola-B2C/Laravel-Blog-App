@@ -13,6 +13,7 @@ class BlogController extends Controller
 	public function getIndex(Request $request){
 
 		$posts = Post::where('published','=',1)->orderBy('id','desc');
+		
 		if( isset($request->q))
 		{
 			$posts->where(function ($query) use ($request) {
@@ -22,7 +23,7 @@ class BlogController extends Controller
             });
 		}
 		$posts = $posts->paginate(10);
-		
+
 		$catcnt=[];
 		$posts_to_cnt=Post::where('published',1)->get();
 		foreach ($posts_to_cnt as $post) 
