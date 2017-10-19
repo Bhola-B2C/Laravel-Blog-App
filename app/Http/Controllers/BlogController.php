@@ -10,9 +10,19 @@ use Illuminate\Http\Request;
 class BlogController extends Controller
 {
     //
-	public function getIndex(){
+	public function getIndex(Request $request){
 
-		$posts=Post::where('published','=',1)->orderBy('id','desc')->paginate(10);
+		$posts = Post::where('published','=',1)->orderBy('id','desc');
+		
+		if( isset($request->q))
+		{
+			$posts->where(function ($query) use ($request) {
+                $query->where('title', 'LIKE', '%'.$request->q.'%')
+                      ->orWhere('body', 'LIKE', '%'.$request->q.'%')
+                      ->orWhere('slug', 'LIKE', '%'.$request->q.'%');
+            });
+		}
+		$posts = $posts->paginate(10);
 
 		$catcnt=[];
 		$posts_to_cnt=Post::where('published',1)->get();
