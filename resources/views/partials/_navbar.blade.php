@@ -19,7 +19,7 @@
         <li class="{{ Request::is('about') ? "active" : "" }}"><a href="/about">About</a></li>
         <li class="{{ Request::is('contact') ? "active" : "" }}"><a href="/contact">Contact</a></li>
       </ul>
-      <form class="navbar-form navbar-left">
+      <form class="navbar-form navbar-left" type="get" action="blog">
         <div class="input-group">
           <input type="text" class="form-control" name="q" placeholder="Search"> 
             <span class="input-group-btn">
