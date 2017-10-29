@@ -6,13 +6,16 @@
 						<div class="content-footer">
 							<p>
 								<img src="https://s.gravatar.com/avatar/b5d514eba12581d6dd000c4a817a2a95?s=50" alt="" class="footer-image">
-								This website is created by Bhola Nath Chowdhary, a member of GNU Linux User Group, NIT Durgapur.
-								Currently pursuing B.Tech ECE, and great php developer and competitive coder(bhola_nit codechef handle). This website is made in Laravel to tell the power of Laravel, the open source framework. :D
+								This website is created by Bhola Nath Chowdhary, a member of GNU Linux User Group, NIT Durgapur. Currently pursuing B.Tech ECE, and great PHP developer and competitive coder(bhola_nit codechef handle). This website is made in Laravel to show the power of Laravel, the open source framework. :D 
 							</p>
 						</div>
 					</div>
 					<div class="col-md-3 col-md-offset-1">
 						<h4>Quote of the day:</h4>
+						<div class="blockquote">
+							<h3 id="quote"> </h3>
+							-<p id="author"></p>
+						</div>
 					</div>
 					<div class="col-md-4 col-md-offset-1">
 						<h4>Follow us on:</h4>
@@ -59,3 +62,6 @@
 			</div>
 		</div>
 	</div>
+
+	<script src="{{ asset('/js/jquery.js') }}"></script> 
+	<script src="{{ asset('/js/quote.js') }}"></script> 
