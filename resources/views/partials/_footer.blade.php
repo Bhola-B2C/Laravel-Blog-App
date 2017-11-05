@@ -12,7 +12,7 @@
 					</div>
 					<div class="col-md-3 col-md-offset-1">
 						<h4>Quote of the day:</h4>
-						<div class="blockquote footer-image">
+						<div class="blockquote">
 							<p id="quote"> </p>
 							-<p id="author"></p>
 						</div>
