@@ -1,4 +1,5 @@
 <p align="center"><img src="public/images/b2c.jpg"></p>
+
 [![HitCount](http://hits.dwyl.io/Bhola-B2C/Laravel-Blog-App.svg)](http://hits.dwyl.io/Bhola-B2C/Laravel-Blog-App)
 
 
